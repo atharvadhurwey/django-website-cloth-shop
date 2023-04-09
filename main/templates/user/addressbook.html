@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboardStyle.css' %}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <title>Addres</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+    <section class="upperBanner-container">
+        <div class="upperBanner-color">
+        </div>
+        <div class="upperBanner-content">
+            <p>Home/User</p>
+            <h1>DASHBOARD</h1>
+        </div>
+    </section>
+    <section class="dashboard-main-container">
+        <div class="dashboard-main-heading">Address Book</div>
+        <div class="dashboard-main-content">
+            <div class="dashboard-left">
+                {% include "user/user-sidebar.html" %}
+            </div>
+            <div class="dashboard-right">
+                <div class="dashboard-right-addressbook-container">
+                    <div class="addressbook-addBtn-container">
+                        <a href="{% url 'add-address' %}" class="addressbook-addBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    {% for add in addbook %}
+                    <div class="addressbook-item">
+                        <div class="addressbook-item-address">
+                            <div class="addressbook-item-address-address">
+                                {{add.address}}
+                            </div>
+                        </div>
+                        <div class="addressbook-item-mobile">
+                            <div class="addressbook-item-mobile-text">Mobile No.- </div>
+                            <div class="addressbook-item-mobile-num">{{add.mobile}}</div>
+                        </div>
+                        {% if add.status %}
+                        <div class="addressbook-item-status">
+                            <div class="addressbook-item-status-text addressbook-item-status-text{{add.id}}">Status -
+                                Active</div>
+                            <div class="addressbook-item-status-symbol activated{{add.id}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="check{{add.id}} check" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="#00ff00" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" style="display: none"
+                                    class="wrong{{add.id}} wrong" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="addressbook-item-status-btn-container">
+                            <a href="{% url 'update-address' add.id %}" class="addressbook-item-editBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+                                    <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+                                </svg>
+                                <div>EDIT</div>
+                            </a>
+                            <button style="display: none;" data-address="{{add.id}}"
+                                class="btn-5 activate-address btn{{add.id}} actbtn">Activate</button>
+                        </div>
+                        {% else %}
+                        <div class="addressbook-item-status">
+                            <div class="addressbook-item-status-text addressbook-item-status-text{{add.id}}">Status -
+                                Inactive</div>
+                            <div class="addressbook-item-status-symbol">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"
+                                    class="check{{add.id}} check" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="#00ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="wrong{{add.id}} wrong" width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="#FF0000" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="addressbook-item-status-btn-container">
+                            <a href="{% url 'update-address' add.id %}" class="addressbook-item-editBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+                                    <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+                                </svg>
+                                <div>EDIT</div>
+                            </a>
+                            <button data-address="{{add.id}}"
+                                class="btn-5 activate-address btn{{add.id}} actbtn">Activate</button>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "footer.html" %}
+</body>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</html>

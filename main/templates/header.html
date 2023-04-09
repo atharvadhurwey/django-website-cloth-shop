@@ -1,0 +1,100 @@
+<header class="main-header">
+    <div class="header-content">
+        <div class="left"><a href="{% url 'home' %}">Shareta.</a></div>
+        <ul class="center" id="nav-menu">
+            <div class="close_menu" id="close-menu">
+                <i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </i>
+            </div>
+            <li class="nav_item"><a href="{% url 'home' %}" class="nav_link">HOME</a></li>
+            <li class="nav_item"><a href="{% url 'products' %}" class="nav_link">CATEGORIES</a></li>
+            <li class="nav_item"><a href="{% url 'brands' %}" class="nav_link">BRANDS</a></li>
+            <li class="nav_item"><a href="{% url 'product-list' %}" class="nav_link">CLOTHS</a></li>
+            <li class="nav_item"><a href="{% url 'aboutUs' %}" class="nav_link">ABOUT US</a></li>
+        </ul>
+        <div class="right">
+            <button style="display: inline;" class="navbar-icon" id="searchToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <button style="display: inline;" class="navbar-icon" id="accountToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </button>
+            <span class="cart-icon navbar-icon">
+                <button type="submit" id="mainBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="10" cy="20.5" r="1" />
+                        <circle cx="18" cy="20.5" r="1" />
+                        <path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1" />
+                    </svg>
+                    <span class="cart-count cart-list">{{request.session.cartdata|length}}</span>
+                </button>
+            </span>
+            <div class="header-accountBtn-toggle" style="display: none;" id="accountBtn-toggle">
+                <div class="accountbox-main-container">
+                    {% if user.is_authenticated %}
+                    <div>
+                        <a href="{% url 'my_dashboard' %}">Dashboard</a>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </div>
+                    {% else %}
+                    <div>
+                        <a href="{% url 'login' %}">Login</a>
+                        <a href="{% url 'signup' %}">SignUp</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <script>
+                document.getElementById("mainBtn").addEventListener("click", redirectFunction);
+
+                function redirectFunction() {
+                    window.location.href = "{% url 'cart' %}";
+                }
+            </script>
+        </div>
+        <div class="toggle_menu" id="toggle-menu">
+            <i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </i>
+        </div>
+    </div>
+    <div class="header-searchBtn-toggle" style="display: none;" id="searchBtn-toggle">
+        <div class="searchbox-main-container">
+            <form class="searchbox-main-form" action="/search">
+                <div class="searchbox-content">
+                    <input name="q" type="text" placeholder=" " />
+                    <button type="submit">
+                        <span class="searchbox-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </span>
+                    </button>
+                    <span class="searchbox-search">search</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</header>

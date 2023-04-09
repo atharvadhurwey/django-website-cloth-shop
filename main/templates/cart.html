@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cartstyle.css' %}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <title>Cart</title>
+
+</head>
+
+<body>
+    {% include "header.html" %}
+    <section class="upperBanner-container">
+        <div class="upperBanner-color">
+        </div>
+        <div class="upperBanner-content">
+            <p>Home/Shop</p>
+            <h1>CART</h1>
+        </div>
+    </section>
+    <section class="shoppingCart-main-container" id="cartList">
+        <h1 class="shoppingCart-main-container-heading">Products</h1>
+        <div class="shoppingCart-productDetail-container">
+            <div class="shoppingCart-product-container">
+                <div class="shoppingCart-product-items">
+                    <div class="shoppingCart-product-container-line"></div>
+                    {% if total_amt == 0 %}
+                    <div class="shoppingCart-product-empty">Your Cart is <span>EMPTY</span></div>
+                    {% else %}
+                    {% for product_id,item in cart_data.items %}
+                    <div class="shoppingCart-product-item">
+                        <div class="shoppingCart-product-image">
+                            <img src="/media/{{item.image}}" alt="">
+                        </div>
+                        <div class="shoppingCart-product-name">
+                            <div>Name</div>
+                            <div>{{item.title}}</div>
+                        </div>
+                        <div class="shoppingCart-product-quantity">
+                            <div>Quantity</div>
+                            <div class="shoppingCart-product-quantity-input">
+                                <button id="decrement" onclick="stepper(this, '{{product_id}}')"> - </button>
+                                <input type="number" min="1" max="10" step="1" value="{{item.qty}}" id="{{product_id}}"
+                                    class="input12 product-qty-{{product_id}}" readonly>
+                                <button id="increment" onclick="stepper(this, '{{product_id}}')"> + </button>
+                            </div>
+                            <div class="shoppingCart-product-quantity-button">
+                                <button class="update-item" data-item="{{product_id}}">ADD</button>
+                            </div>
+                        </div>
+                        <div class="shoppingCart-product-price">
+                            <div>Price</div>
+                            <div>${% widthratio item.price 1 item.qty %}</div>
+                        </div>
+                        <div class="shoppingCart-product-delete">
+                            <button class="delete-item" data-item="{{product_id}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 3h18v18H3zM15 9l-6 6m0-6l6 6" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="shoppingCart-product-container-line"></div>
+                    {% endfor %}
+                    {% endif %}
+
+                </div>
+            </div>
+            <div class="shoppingCart-productPrice-container">
+                <div class="shoppingCart-productPrice-content">
+                    <h1 class="shoppingCart-productPrice-heading">Cart Total</h1>
+                    <div class="shoppingCart-productPrice-subtotal">
+                        <h1>Subtotal:</h1>
+                        <h1 class="shoppingCart-productPrice-price">${{total_amt}}</h1>
+                    </div>
+                    <h1 class="shoppingCart-productPrice-heading">Shipping:</h1>
+                    <h1 class="shoppingCart-productPrice-flatrate">Flat Rate: 15$</h1>
+                    <div class="shoppingCart-productPrice-total">
+                        <h1 class="shoppingCart-productPrice-heading">Total:</h1>
+                        {% if total_amt_tax == 15 %}
+                        <h1 class="shoppingCart-productPrice-price">$0</h1>
+                        {% else %}
+                        <h1 class="shoppingCart-productPrice-price">${{total_amt_tax}}</h1>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="shoppingCart-productPrice-buttons">
+                    {% if totalitems %}
+                    <a href="{% url 'checkout' %}" style="text-decoration: none;">
+                        <button class="btn-5">Proceed to check out</button>
+                    </a>
+                    <button class="btn-5">Continue Shopping</button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="shoppingCart-discount-container">
+            <h1>DISCOUNT</h1>
+            <p>To apply your discount enter number of your coupon<br>and press "SUBMIT" button</p>
+            <div>
+                <input type="text">
+                <button type="button">Submit</button>
+            </div>
+        </div>
+    </section>
+    {% include "footer.html" %}
+</body>
+
+<script src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+</html>

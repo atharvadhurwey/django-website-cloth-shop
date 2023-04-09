@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboardStyle.css' %}">
+    <title>Orders</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+    <section class="upperBanner-container">
+        <div class="upperBanner-color">
+        </div>
+        <div class="upperBanner-content">
+            <p>Home/User</p>
+            <h1>DASHBOARD</h1>
+        </div>
+    </section>
+    <section class="dashboard-main-container">
+        <div class="dashboard-main-heading">My dashboard</div>
+        <div class="dashboard-main-content">
+            <div class="dashboard-left">
+                {% include "user/user-sidebar.html" %}
+            </div>
+            <div class="dashboard-right">
+                <div class="dashboard-right-orders-container">
+                    <div class="dashboard-right-order-items-container">
+                        <div class="dashboard-order-item">
+                            <div class="dashboard-order-item-heading">Inv No.</div>
+                            <div class="dashboard-order-item-heading">Item</div>
+                            <div class="dashboard-order-item-heading">Qty</div>
+                            <div class="dashboard-order-item-heading">Price</div>
+                            <div class="dashboard-order-item-heading">Total</div>
+                        </div>
+                        {% for item in orderitems %}
+                        <div class="dashboard-order-item">
+                            <div class="dashboard-order-item-invoice dashboard-order-item-things">
+                                <p>{{item.invoice_no}}</p>
+                            </div>
+                            <div class="dashboard-order-item-image dashboard-order-item-things">
+                                <span><img src="/media/{{item.image}}" width="80"></span>
+                                <p>{{item.item}}</p>
+                            </div>
+                            <div class="dashboard-order-item-qty dashboard-order-item-things">
+                                <p><p>{{item.qty}}</p></p>
+                            </div>
+                            <div class="dashboard-order-item-price dashboard-order-item-things">
+                                <p>{{item.price}}</p>
+                            </div>
+                            <div class="dashboard-order-item-total dashboard-order-item-things">
+                                <p>{{item.total}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!-- <div class="dashboard-order-item">
+                        <h1>Inv No.</h1>
+                        {% for item in orderitems %}
+                        <p>{{item.invoice_no}}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="dashboard-order-item">
+                        <h1>Item</h1>
+                        {% for item in orderitems %}
+                        <span><img src="/media/{{item.image}}" width="80"></span>
+                        <p>{{item.item}}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="dashboard-order-item">
+                        <h1>Qty</h1>
+                        {% for item in orderitems %}
+                        <p>{{item.qty}}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="dashboard-order-item">
+                        <h1>Price</h1>
+                        {% for item in orderitems %}
+                        <p>{{item.price}}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="dashboard-order-item">
+                        <h1>Total</h1>
+                        {% for item in orderitems %}
+                        <p>{{item.total}}</p>
+                        {% endfor %}
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "footer.html" %}
+</body>
+<script src="{% static 'js/main.js' %}"></script>
+
+</html>

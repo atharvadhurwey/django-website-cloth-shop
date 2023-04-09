@@ -1,0 +1,232 @@
+$white_bg: #ffffff;
+$grey: #a5a5a5;
+$black: #1a1a1a;
+$red: #ef3636;
+$white: #fff;
+
+.upperBanner-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url("../images/cloths/loginBanner.jpeg");
+  background-position: 0 -549px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  .upperBanner-color {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $black;
+    opacity: 0.6;
+  }
+  .upperBanner-content {
+    position: absolute;
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    color: $white_bg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+    p {
+      font-size: 10px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+  }
+}
+
+.login-container-main {
+  margin: 80px auto;
+  display: flex;
+  justify-content: center;
+  .sideBanner {
+    height: 100vh;
+    width: 40vw;
+    background: url("../images/cloths/signupSideBanner.jpg");
+    background-position: 0 -100px;
+    background-size: cover;
+  }
+  .sideContent {
+    height: 100vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .login-container-heading {
+      font-size: 40px;
+      margin-bottom: 20px;
+      //   display: flex;
+      //   justify-content: center;
+    }
+    .login-container-table {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-spacing: 20px;
+      .errorlist {
+        list-style: none;
+        width: 30vw;
+        text-align: center;
+        margin-bottom: 20px;
+        color: $red;
+      }
+      label {
+        font-size: 20px;
+      }
+      tbody {
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        input[type="text"],
+        input[type="password"],
+        input[type="number"] {
+          padding: 5px 8px;
+          caret-color: $red;
+          &:focus {
+            outline: $red solid 1px;
+            border-style: solid;
+            border-color: $red;
+          }
+        }
+        tr {
+          th {
+            padding-right: 30px;
+            list-style: none;
+          }
+          td {
+            display: flex;
+            flex-direction: column-reverse;
+            span {
+              ul {
+                list-style: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .login-button {
+      margin: 0 auto;
+      margin-top: 20px;
+      font-size: 18px;
+      padding: 5px 20px;
+      background-color: $red;
+      border: none;
+      color: $white_bg;
+      cursor: pointer;
+    }
+    .login-container-form {
+      display: flex;
+      flex-direction: column;
+    }
+    .ifNotLogin {
+      margin-top: 20px;
+    }
+    .reset-link-send-msg {
+      font-size: 30px;
+    }
+  }
+}
+.passreset-container-main {
+  margin: 80px auto;
+  display: flex;
+  justify-content: center;
+  .sideContent {
+    height: 100vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .passreset-container-heading {
+      font-size: 50px;
+      margin-bottom: 40px;
+      color: $red;
+    }
+    .passreset-container-form {
+      display: flex;
+      flex-direction: column;
+      .passreset-container-table {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-spacing: 20px;
+        .errorlist {
+          list-style: none;
+          width: 30vw;
+          text-align: center;
+          margin-bottom: 20px;
+          color: $red;
+        }
+        label {
+          font-size: 20px;
+          width: 200px;
+          display: block;
+        }
+        tbody {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+          // align-items: center;
+          input[type="text"],
+          input[type="password"],
+          input[type="number"] {
+            padding: 5px 8px;
+            caret-color: $red;
+            &:focus {
+              outline: $red solid 1px;
+              border-style: solid;
+              border-color: $red;
+            }
+          }
+          tr {
+            display: flex;
+            align-items: center;
+            th {
+              width: 200px;
+              padding-right: 30px;
+              list-style: none;
+              display: flex;
+              align-items: center;
+            }
+            td {
+              width: 100%;
+              display: flex;
+              flex-direction: column-reverse;
+              span {
+                ul {
+                  list-style: none;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .login-button {
+        margin: 0 auto;
+        margin-top: 50px;
+        font-size: 18px;
+        padding: 5px 20px;
+        background-color: $red;
+        border: none;
+        color: $white_bg;
+        cursor: pointer;
+      }
+    }
+  }
+}

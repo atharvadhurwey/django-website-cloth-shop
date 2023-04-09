@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/brandliststyle.css' %}">
+    <title>Brands</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+    <section class="upperBanner-container">
+        <div class="upperBanner-color">
+        </div>
+        <div class="upperBanner-content">
+            <p>Home/Shop</p>
+            <h1>BRANDS</h1>
+        </div>
+    </section>
+    <section class="categorylist-main-container">
+        <div class="formen-container">
+            <div class="formen-heading">
+                <h1>Brands</h1>
+            </div>
+            <div class="card-container">
+                {% for brand in brandlist %}
+                <div class="card-item">
+                    <a class="card-link" href="/brand-product_list/{{brand.id}}"><img src="/media/{{brand.image}}" alt="" class="card-img"></a>
+                    <div class="card-content">
+                        <h1>{{brand.title}}</h1>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% include "footer.html" %}
+</body>
+<script src="{% static 'js/main.js' %}"></script>
+</html>

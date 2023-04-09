@@ -1,0 +1,260 @@
+.upperBanner-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url("../images/cloths/dashboardBanner.jpg");
+  background-position: 0 -1183px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+.upperBanner-container .upperBanner-color {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1a1a1a;
+  opacity: 0.6;
+}
+.upperBanner-container .upperBanner-content {
+  position: absolute;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 1;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+.upperBanner-container .upperBanner-content p {
+  font-size: 10px;
+}
+.upperBanner-container .upperBanner-content h1 {
+  font-size: 30px;
+}
+
+.dashboard-main-container {
+  margin: 80px auto;
+  max-width: 1200px;
+}
+.dashboard-main-container .dashboard-main-heading {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.dashboard-main-container .dashboard-main-content {
+  display: flex;
+  flex-direction: row;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-left {
+  background-color: #1a1a1a;
+  padding: 20px 0;
+  width: 20%;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-left .dashboard-left-items-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 20px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-left .dashboard-left-items-container .dashboard-item a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-left .dashboard-left-items-container .dashboard-item a:hover {
+  color: #ef3636;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right {
+  background-color: whitesmoke;
+  width: 80%;
+  padding: 20px 0;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-order-items-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-order-items-container .dashboard-order-item {
+  width: 100%;
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: space-around;
+  align-items: center;
+  text-transform: uppercase;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-order-items-container .dashboard-order-item p {
+  text-align: center;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-order-items-container .dashboard-order-item .dashboard-order-item-things {
+  width: 100%;
+  text-align: center;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-order-items-container .dashboard-order-item .dashboard-order-item-things a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-order-items-container .dashboard-order-item .dashboard-order-item-things a:hover {
+  color: #ef3636;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-order-items-container .dashboard-order-item .dashboard-order-item-heading {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-order-items-container .dashboard-order-item .dashboard-order-item-image {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container .addressbook-addBtn-container {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container .addressbook-addBtn-container .addressbook-addBtn svg {
+  stroke: #1a1a1a;
+  width: 30px;
+  height: 30px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container .addressbook-addBtn-container .addressbook-addBtn svg:hover {
+  stroke: #ef3636;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container .addressbook-item {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container .addressbook-item .addressbook-item-address,
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container .addressbook-item .addressbook-item-status,
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container .addressbook-item .addressbook-item-mobile {
+  display: flex;
+  gap: 5px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container .addressbook-item .addressbook-item-status-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container .addressbook-item .addressbook-item-status-btn-container .addressbook-item-editBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #1a1a1a;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container .addressbook-item .addressbook-item-status-btn-container button {
+  color: #ef3636;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addressbook-container .addressbook-item .addressbook-item-status-btn-container button:hover {
+  color: #ffffff;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table {
+  margin: 0 auto;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody textarea {
+  resize: none;
+  padding: 5px 8px;
+  caret-color: #ef3636;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody textarea:focus {
+  outline: #ef3636 solid 2px;
+  border-style: solid;
+  border-color: #ef3636;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody input[type=text],
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody input[type=password],
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody input[type=number] {
+  padding: 5px 8px;
+  caret-color: #ef3636;
+  width: 100%;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody input[type=text]:focus,
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody input[type=password]:focus,
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody input[type=number]:focus {
+  outline: #ef3636 solid 1px;
+  border-style: solid;
+  border-color: #ef3636;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody input::-webkit-outer-spin-button,
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody input[type=checkbox] {
+  height: 20px;
+  width: 20px;
+  accent-color: #ef3636;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody tr {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  align-items: center;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody tr th {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  padding-right: 30px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody tr th label {
+  width: 100px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody tr td {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 5px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody tr td ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody tr .addaddress-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-container-table tbody tr .addaddress-button-container .addaddress-button {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 5px 20px;
+  background-color: #ef3636;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-success-msg-container {
+  padding: 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.dashboard-main-container .dashboard-main-content .dashboard-right .dashboard-right-addaddress-container .addaddress-success-msg-container .addaddress-success-msg {
+  color: #ef3636;
+}/*# sourceMappingURL=dashboardStyle.css.map */

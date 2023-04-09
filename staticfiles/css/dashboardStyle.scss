@@ -1,0 +1,271 @@
+$white_bg: #ffffff;
+$grey: #a5a5a5;
+$black: #1a1a1a;
+$red: #ef3636;
+$white: #fff;
+
+.upperBanner-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url("../images/cloths/dashboardBanner.jpg");
+  background-position: 0 -1183px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  .upperBanner-color {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $black;
+    opacity: 0.6;
+  }
+  .upperBanner-content {
+    position: absolute;
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    color: $white_bg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+    p {
+      font-size: 10px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+  }
+}
+
+.dashboard-main-container {
+  margin: 80px auto;
+  max-width: 1200px;
+  .dashboard-main-heading {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .dashboard-main-content {
+    display: flex;
+    flex-direction: row;
+    .dashboard-left {
+      background-color: $black;
+      padding: 20px 0;
+      .dashboard-left-items-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        gap: 20px;
+        .dashboard-item {
+          a {
+            text-decoration: none;
+            color: $white_bg;
+            &:hover {
+              color: $red;
+            }
+          }
+        }
+      }
+      width: 20%;
+    }
+    .dashboard-right {
+      background-color: whitesmoke;
+      width: 80%;
+      padding: 20px 0;
+      .dashboard-right-order-items-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        .dashboard-order-item {
+          width: 100%;
+          display: flex;
+          flex: 0 1 auto;
+          justify-content: space-around;
+          align-items: center;
+          text-transform: uppercase;
+          p {
+            text-align: center;
+          }
+
+          .dashboard-order-item-things {
+            width: 100%;
+            text-align: center;
+            a {
+              text-decoration: none;
+              color: $black;
+              &:hover {
+                color: $red;
+              }
+            }
+          }
+          .dashboard-order-item-heading {
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+            font-size: 20px;
+          }
+          .dashboard-order-item-image {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+          }
+        }
+      }
+      .dashboard-right-addressbook-container {
+        position: relative;
+        .addressbook-addBtn-container {
+          position: absolute;
+          right: 15px;
+          top: 5px;
+          .addressbook-addBtn {
+            svg {
+              stroke: $black;
+              width: 30px;
+              height: 30px;
+              &:hover {
+                stroke: $red;
+              }
+            }
+          }
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .addressbook-item {
+          width: 100%;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          .addressbook-item-address,
+          .addressbook-item-status,
+          .addressbook-item-mobile {
+            display: flex;
+            gap: 5px;
+          }
+          .addressbook-item-status-btn-container {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            .addressbook-item-editBtn {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              text-decoration: none;
+              color: $black;
+            }
+            button {
+              color: $red;
+              &:hover {
+                color: $white_bg;
+              }
+            }
+          }
+        }
+      }
+      .dashboard-right-addaddress-container {
+        .addaddress-container-table {
+          margin: 0 auto;
+          tbody {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            textarea {
+              resize: none;
+              padding: 5px 8px;
+              caret-color: $red;
+              &:focus {
+                outline: $red solid 2px;
+                border-style: solid;
+                border-color: $red;
+              }
+            }
+            input[type="text"],
+            input[type="password"],
+            input[type="number"] {
+              padding: 5px 8px;
+              caret-color: $red;
+              width: 100%;
+              &:focus {
+                outline: $red solid 1px;
+                border-style: solid;
+                border-color: $red;
+              }
+            }
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            input[type="checkbox"] {
+              height: 20px;
+              width: 20px;
+              accent-color: $red;
+            }
+            tr {
+              display: flex;
+              justify-content: flex-start;
+              gap: 5px;
+              align-items: center;
+              th {
+                width: 100px;
+                display: flex;
+                justify-content: center;
+                padding-right: 30px;
+                label {
+                  width: 100px;
+                }
+              }
+              td {
+                display: flex;
+                justify-content: flex-start;
+                width: 100%;
+                gap: 5px;
+                ul {
+                  list-style: none;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 15px;
+                }
+              }
+              .addaddress-button-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                .addaddress-button {
+                  margin-top: 20px;
+                  font-size: 18px;
+                  padding: 5px 20px;
+                  background-color: $red;
+                  border: none;
+                  color: $white_bg;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+        .addaddress-success-msg-container {
+          padding: 20px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          .addaddress-success-msg {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}

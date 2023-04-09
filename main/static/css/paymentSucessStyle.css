@@ -1,0 +1,65 @@
+.upperBanner-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url("../images/cloths/paymentSuccessBanner.jpg");
+  background-position: 0 -606px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+.upperBanner-container .upperBanner-color {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1a1a1a;
+  opacity: 0.6;
+}
+.upperBanner-container .upperBanner-content {
+  position: absolute;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 1;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+.upperBanner-container .upperBanner-content p {
+  font-size: 10px;
+}
+.upperBanner-container .upperBanner-content h1 {
+  font-size: 30px;
+}
+
+.paymentSuccess-container-main {
+  max-width: 1000px;
+  margin: 80px auto;
+}
+.paymentSuccess-container-main .paymentSuccess-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.paymentSuccess-container-main .paymentSuccess-content .heading {
+  text-transform: uppercase;
+  font-size: 35px;
+  font-weight: 700;
+  color: #ef3636;
+  width: 400px;
+  text-align: center;
+}
+.paymentSuccess-container-main .paymentSuccess-content .text {
+  text-align: center;
+}
+.paymentSuccess-container-main .paymentSuccess-content .homepage-button button {
+  padding: 15px 25px;
+}/*# sourceMappingURL=paymentSucessStyle.css.map */

@@ -1,0 +1,347 @@
+.upperBanner-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url("../images/cloths/productBanner.jpg");
+  background-position: 0 -222px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+.upperBanner-container .upperBanner-color {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1a1a1a;
+  opacity: 0.6;
+}
+.upperBanner-container .upperBanner-content {
+  position: absolute;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 1;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+.upperBanner-container .upperBanner-content p {
+  font-size: 10px;
+}
+.upperBanner-container .upperBanner-content h1 {
+  font-size: 30px;
+}
+
+.product-main-container .product-detail-container {
+  max-width: 1100px;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+}
+.product-main-container .product-detail-container .product-detail {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+  padding: 0 80px;
+}
+.product-main-container .product-detail-container .product-detail .product-brand a {
+  color: #ef3636;
+  font-size: 30px;
+  letter-spacing: 5px;
+  text-decoration: none;
+}
+.product-main-container .product-detail-container .product-detail .product-name {
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.product-main-container .product-detail-container .product-detail .product-type a {
+  color: #a5a5a5;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.product-main-container .product-detail-container .product-detail .product-price {
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  color: #ef3636;
+}
+.product-main-container .product-detail-container .product-detail .product-selectSize {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 13px;
+}
+.product-main-container .product-detail-container .product-detail .product-selectSize .product-selectSize-form {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.product-main-container .product-detail-container .product-detail .product-selectSize .product-selectSize-form div {
+  display: flex;
+}
+.product-main-container .product-detail-container .product-detail .product-selectSize .product-selectSize-form .product-selectSize-items {
+  gap: 15px;
+}
+.product-main-container .product-detail-container .product-detail .product-selectSize .product-selectSize-form input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: #1a1a1a;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.1s ease;
+}
+.product-main-container .product-detail-container .product-detail .product-selectSize .product-selectSize-form input::before {
+  content: attr(label);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.product-main-container .product-detail-container .product-detail .product-selectSize .product-selectSize-form input:checked {
+  background-color: #ef3636;
+  color: #ffffff;
+}
+.product-main-container .product-detail-container .product-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.product-main-container .product-detail-container .product-image img {
+  height: 600px;
+}
+.product-main-container .product-otherDetails-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-main-container .product-otherDetails-container .product-otherDetails {
+  width: 100%;
+  padding-bottom: 20px;
+}
+.product-main-container .product-otherDetails-container .product-otherDetails .product-otherDetails-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 100px;
+}
+.product-main-container .product-otherDetails-container .product-otherDetails .product-otherDetails-form input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  color: #a5a5a5;
+  font-size: 15px;
+  height: 30px;
+  transition: all 0.1s ease;
+}
+.product-main-container .product-otherDetails-container .product-otherDetails .product-otherDetails-form input::before {
+  content: attr(label);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.product-main-container .product-otherDetails-container .product-otherDetails .product-otherDetails-form input:checked {
+  color: #ef3636;
+  font-weight: 700;
+}
+.product-main-container .product-otherDetails-container .product-otherDetails-content {
+  margin: 20px auto;
+}
+.product-main-container .product-otherDetails-container .product-otherDetails-content .product-otherDetails-desc {
+  padding: 0 10vw;
+  text-align: center;
+  line-height: 3;
+}
+.product-main-container .product-otherDetails-container .product-otherDetails-content .product-otherDetails-size {
+  padding: 0 10vw;
+  text-align: center;
+  line-height: 2;
+}
+.product-main-container .product-otherDetails-container .product-otherDetails-content .product-otherDetails-return {
+  padding: 0 10vw;
+  text-align: center;
+  line-height: 2;
+}
+.product-main-container .product-review-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.product-main-container .product-review-container .reviewModel-container {
+  z-index: 4;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+.product-main-container .product-review-container .reviewModel-container .reviewModel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  background: #ffffff;
+  width: 40%;
+  max-width: 50%;
+  padding: 20px;
+}
+.product-main-container .product-review-container .reviewModel-container .reviewModel .reviewModel-closeBtn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.product-main-container .product-review-container .reviewModel-container .reviewModel .reviewModel-form-heading {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: #ef3636;
+}
+.product-main-container .product-review-container .reviewModel-container .reviewModel .reviewModel-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.product-main-container .product-review-container .reviewModel-container .reviewModel .ajaxRes {
+  color: #ef3636;
+  text-align: center;
+  margin-top: 10px;
+}
+.product-main-container .product-review-container .reviewModel-container .reviewModel .reviewModel-form-submitBtn {
+  margin-top: 25px;
+  padding: 10px 30px;
+}
+.product-main-container .product-review-container .product-avgRating-container {
+  display: flex;
+  gap: 15px;
+  font-size: 25px;
+  background-color: #ef3636;
+  color: #ffffff;
+  padding: 10px;
+}
+.product-main-container .product-review-container .product-avgRating-container .product-avgRating-heading {
+  text-transform: uppercase;
+}
+.product-main-container .product-review-container .product-review-cards-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.product-main-container .product-review-container .product-review-cards-container .product-review-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 5px;
+}
+.product-main-container .product-review-container .product-review-cards-container .product-review-card .product-review-user-name {
+  text-transform: capitalize;
+}
+.product-main-container .product-review-container .product-review-cards-container .product-review-card .product-review {
+  text-align: center;
+}
+.product-main-container .product-review-container .product-review-cards-container .product-review-card:nth-child(even) {
+  color: #1a1a1a;
+  stroke: #1a1a1a;
+  background-color: #ffffff;
+}
+.product-main-container .product-review-container .product-review-cards-container .product-review-card:nth-child(odd) {
+  color: #ffffff;
+  stroke: #ffffff;
+  background-color: #1a1a1a;
+}
+.product-main-container .followUs-container {
+  max-width: 1100px;
+  margin: 80px auto 150px;
+  height: 250px;
+  background-color: #1a1a1a;
+  position: relative;
+}
+.product-main-container .followUs-container .followUs-transparantColor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: #1a1a1a;
+  opacity: 0.7;
+}
+.product-main-container .followUs-container .followUs-social-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.product-main-container .followUs-container .followUs-social-container .followUs-social-logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+.product-main-container .followUs-container .followUs-social-container .followUs-social-logos .followUs-social-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  gap: 5px;
+  padding: 10px;
+}
+.product-main-container .followUs-container .followUs-images {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+.product-main-container .followUs-container .followUs-images .followUs-upperRow,
+.product-main-container .followUs-container .followUs-images .followUs-lowerRow {
+  width: 100%;
+  height: 125px;
+  margin: 0 auto;
+  display: flex;
+}
+.product-main-container .followUs-container .followUs-images .followUs-upperRow img,
+.product-main-container .followUs-container .followUs-images .followUs-lowerRow img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=productpage.css.map */

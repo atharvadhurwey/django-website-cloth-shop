@@ -1,0 +1,105 @@
+{% load static %}
+<button id="filterToggle" class="btn-5">Filter By</button>
+<div class="filter-main-toggle-container" id="filterContainer" style="display: none;">
+    <div class="filter-bybrand">
+        <h1>Categories</h1>
+        <ul class="filter-bybrand-main">
+            <h1>Men:</h1>
+            {% for cat in cats %}
+            {% if cat.category__gender == "Male" %}
+            <li class="filter-bybrand-item">
+                <label>
+                    <input class="filter-checkbox" type="checkbox" data-filter="category" value="{{cat.category__id}}"
+                        id="">
+                    <span>{{cat.category__title}}</span>
+                </label>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        <ul class="filter-bybrand-main">
+            <h1>Women:</h1>
+            {% for cat in cats %}
+            {% if cat.category__gender == "Female" %}
+            <li class="filter-bybrand-item">
+                <label>
+                    <input class="filter-checkbox" type="checkbox" data-filter="category" value="{{cat.category__id}}"
+                        id="">
+                    <span>{{cat.category__title}}</span>
+                </label>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        <ul class="filter-bybrand-main">
+            <h1>Kid:</h1>
+            {% for cat in cats %}
+            {% if cat.category__gender == "Kid" %}
+            <li class="filter-bybrand-item">
+                <label>
+                    <input class="filter-checkbox" type="checkbox" data-filter="category" value="{{cat.category__id}}"
+                        id="">
+                    <span>{{cat.category__title}}</span>
+                </label>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="filter-bybrand">
+        <h1>Brands</h1>
+        <ul class="filter-bybrand-main">
+            {% for brand in brands %}
+            <li class="filter-bybrand-item">
+                <label>
+                    <input class="filter-checkbox" type="checkbox" data-filter="brand" value="{{brand.brand__id}}"
+                        id="">
+                    <span>{{brand.brand__title}}</span>
+                </label>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="filter-bybrand">
+        <h1>Sizes</h1>
+        <ul class="filter-bybrand-main">
+            {% for size in sizes %}
+            <li class="filter-bybrand-item">
+                <label>
+                    <input class="filter-checkbox" type="checkbox" data-filter="size" value="{{size.size__id}}" id="">
+                    <span>{{size.size__title}}</span>
+                </label>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="filter-byprice">
+        <h1>Price</h1>
+        <ul class="filter-price-main">
+            <li class="filter-priceRange-item">
+                <label>
+                    <span>${{minMaxPrice.price__min}}</span>
+                    <input type="range" value="{{minMaxPrice.price__max}}" id="rangeInput"
+                        min="{{minMaxPrice.price__min}}" max="{{minMaxPrice.price__max}}"
+                        oninput="maxPrice.value=this.value" />
+                    <span>${{minMaxPrice.price__max}}</span>
+                </label>
+            </li>
+        </ul>
+        <ul>
+            <li class="filter-priceInput-item">
+                <label>
+                    <input type="number" value="{{minMaxPrice.price__max}}" id="maxPrice"
+                        min="{{minMaxPrice.price__min}}" max="{{minMaxPrice.price__max}} onkeyup="
+                        rangeInput.value=this.value" />
+                </label>
+            </li>
+        </ul>
+        <ul class="filter-priceBtn-main">
+            <li class="filter-priceBtn-item">
+                <button id="priceFilterBtn" class="btn-5">Filter</button>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'js/product-filter.js' %}"></script>

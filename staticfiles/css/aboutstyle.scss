@@ -1,0 +1,243 @@
+$white_bg: #ffffff;
+$grey: #a5a5a5;
+$black: #1a1a1a;
+$red: #ef3636;
+$white: #fff;
+
+
+.upperBanner-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url("../images/cloths/aboutBanner.jpg") ;
+  background-position: 0 -549px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  .upperBanner-color {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $black;
+    opacity: 0.6;
+  }
+  .upperBanner-content {
+    position: absolute;
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    color: $white_bg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+    p {
+      font-size: 10px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+  }
+}
+
+.about-main-container {
+    margin-bottom: 80px;
+    .weAre-container {
+        width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        .weAre-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 60px;
+            h1 {
+                text-transform: uppercase;
+                color: $red;
+            }
+            p {
+                color: $grey;
+            }
+        }
+        .weAre-image {
+            height: 340px;
+            width: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 0 70%;
+            }
+        }
+    }
+
+    .ourServices-Container {
+        margin: 100px auto;
+        max-width: 1100px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        .ourServices-service {
+            width: 20vw;
+            .ourServices-service-heading {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    stroke: $red ; 
+                }
+                h1 {
+                    margin: 10px 5px;
+                    font-size: 20px;
+                }
+            }
+            
+            p {
+                font-size: 13px;
+            }
+        }
+        .vLine {
+            border-left: 4px solid $red;
+            border-radius: 20px;
+        }
+    }
+
+    .ourTeam-main-containeer {
+        max-width: 1100px;
+        margin: 30px auto;
+        .ourTeam-heading-content {
+            h1 {
+                text-transform: uppercase;
+            }
+            p {
+                color: $grey;
+            }
+        }
+        .ourTeam-card-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            .ourTeam-card {
+                background-color: whitesmoke;
+                width: 200px;
+                padding-bottom: 20px;
+                border-radius: 5%;
+                .ourTeam-card-image {
+                    position: relative;
+                    margin: 10px auto;
+                    width: 100px;
+                    height: 100px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 100%;
+                    }
+                }
+
+                .ourTeam-card-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .ourTeam-card-position {
+                        font-size: 15px;
+                        color: $grey;
+                    }
+                    .ourTeam-card-Name {
+                        text-transform: uppercase;
+                        font-size: 20px;
+                    }
+                    .ourTeam-card-socials {
+                        display: flex;
+                        gap: 8px;
+                        .ourTeam-card-social-link {
+                            text-decoration: none;
+                            svg {
+                                fill: $red;
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+                    }
+                    .ourTeam-card-quote {
+                        text-align: center;
+                        font-size: 12px;
+                        margin: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .followUs-container {
+        max-width: 1100px;
+        margin: 80px auto 150px;
+        height: 250px;
+        background-color: $black;
+        position: relative;
+        .followUs-transparantColor {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          background-color: $black;
+          opacity: 0.7;
+        }
+        .followUs-social-container {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          .followUs-social-logos {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 20px;
+    
+            .followUs-social-logo {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              background-color: $white_bg;
+              gap: 5px;
+              padding: 10px;
+            }
+          }
+        }
+        .followUs-images {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0px;
+          .followUs-upperRow,
+          .followUs-lowerRow {
+            width: 100%;
+            height: 125px;
+            margin: 0 auto;
+            display: flex;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+}

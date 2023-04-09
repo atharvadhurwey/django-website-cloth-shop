@@ -1,0 +1,152 @@
+.upperBanner-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url("../images/cloths/loginBanner.jpeg");
+  background-position: 0 -549px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+.upperBanner-container .upperBanner-color {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1a1a1a;
+  opacity: 0.6;
+}
+.upperBanner-container .upperBanner-content {
+  position: absolute;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 1;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+.upperBanner-container .upperBanner-content p {
+  font-size: 10px;
+}
+.upperBanner-container .upperBanner-content h1 {
+  font-size: 30px;
+}
+
+.login-container-main {
+  margin: 80px auto;
+  display: flex;
+  justify-content: center;
+}
+.login-container-main .sideBanner {
+  height: 100vh;
+  width: 40vw;
+  background: url("../images/cloths/loginSideBanner.jpg");
+  background-position: 0 -10px;
+  background-size: cover;
+}
+.login-container-main .sideContent {
+  height: 100vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-container-main .sideContent .login-container-heading {
+  font-size: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.login-container-main .sideContent .login-container-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-container-main .sideContent .login-container-table .errorlist {
+  list-style: none;
+  width: 30vw;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ef3636;
+}
+.login-container-main .sideContent .login-container-table label {
+  font-size: 20px;
+}
+.login-container-main .sideContent .login-container-table .login-button {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 5px 20px;
+  background-color: #ef3636;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+.login-container-main .sideContent .login-container-table tbody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.login-container-main .sideContent .login-container-table tbody textarea {
+  resize: none;
+  padding: 5px 8px;
+  caret-color: #ef3636;
+}
+.login-container-main .sideContent .login-container-table tbody textarea:focus {
+  outline: #ef3636 solid 2px;
+  border-style: solid;
+  border-color: #ef3636;
+}
+.login-container-main .sideContent .login-container-table tbody input[type=text],
+.login-container-main .sideContent .login-container-table tbody input[type=password] {
+  padding: 5px 8px;
+  caret-color: #ef3636;
+}
+.login-container-main .sideContent .login-container-table tbody input[type=text]:focus,
+.login-container-main .sideContent .login-container-table tbody input[type=password]:focus {
+  outline: #ef3636 solid 1px;
+  border-style: solid;
+  border-color: #ef3636;
+}
+.login-container-main .sideContent .login-container-table tbody input[type=checkbox] {
+  height: 20px;
+  width: 20px;
+  accent-color: #ef3636;
+}
+.login-container-main .sideContent .login-container-table tbody tr {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  align-items: center;
+}
+.login-container-main .sideContent .login-container-table tbody tr th {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  padding-right: 30px;
+}
+.login-container-main .sideContent .login-container-table tbody tr td {
+  display: flex;
+  justify-content: center;
+}
+.login-container-main .sideContent .login-container-table tbody tr .login-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.login-container-main .sideContent .loginpass-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}/*# sourceMappingURL=loginStyle.css.map */

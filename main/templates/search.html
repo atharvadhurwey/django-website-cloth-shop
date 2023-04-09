@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/productsStyle.css' %}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <title>Search</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+    <section class="upperBanner-container">
+        <div class="upperBanner-color">
+        </div>
+        <div class="upperBanner-content">
+            <p>Home/Shop</p>
+            <h1>SEARCH</h1>
+        </div>
+    </section>
+    <section class="products-main-container">
+        <div class="filter-main-container">
+            <h1>Search Result for {{request.GET.q}}</h1>
+            {% include "filter.html" %}
+        </div>
+        <div class="product-container" id="filteredProducts">
+            <p class="ajaxLoader">Loading...</p>
+            {% for product in products %}
+            <div class="product">
+                <div class="image">
+                    <a href="/product/{{product.slug}}/{{product.id}}">
+                        <img src="/media/{{product.productattribute_set.first.image}}" alt="{{product.title}}">
+                    </a>
+                    {% if user.is_authenticated %}
+                    <div class="wishlistBtn-container">
+                        <button class="wishlistBtn add-wishlist" data-product="{{product.id}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="product-content">
+                    <h2 class="productCompany">{{product.brand}}</h2>
+                    <h2 class="productName"><a href="/product/{{product.slug}}/{{product.id}}">{{product.title}}</a>
+                    </h2>
+                    <h3 class="productCategory">{{product.category.title}}</h3>
+                    <div class="product-content-price-align">
+                        <span class="product-content-price-align-symbol">$</span>
+                        <span
+                            class="productPrice product-price-{{product.id}}">{{product.productattribute_set.first.price}}</span>
+                    </div>
+                    <div class="productView">
+                        <input type="hidden" class="product-image-{{product.id}}"
+                            value="{{product.productattribute_set.first.image}}">
+                        <input type="hidden" class="product-id-{{product.id}}" value="{{product.id}}">
+                        <input type="hidden" class="product-title-{{product.id}}" value="{{product.title}}">
+                        <input type="hidden" class="product-qty-{{product.id}}" id="productQty" value="1">
+                        <button class="btn-5 add-to-cart" data-index="{{product.id}}">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="products-pagination-container">
+
+        </div>
+    </section>
+    {% include "footer.html" %}
+</body>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/filter.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+</html>
